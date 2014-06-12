@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>注文表示</title>
+
+<script type="text/javascript" src="last.js"></script>
+<script type="text/javascript">
+<!--
+function callback2(request) {
+	var json = eval(request.responseText);
+	var res = '';
+	if (json.length == 1) {
+		res += '<tr><td>' + json[0].id + '</td></tr>';
+		res += '<tr><td>' + json[0].title + '</td></tr>';
+		res += '<tr><td>' + json[0].count + '</td></tr>';
+	} else {
+		for (var i = 0; i < json.length; i++) {
+			res += '<tr><td><a href="javascript:return false;" onclick="getData3('
+					+ json[i].title + ');">' + json[i].title + '</a></td>';
+			res += '<td><a href="' + json[i].count + '">' + json[i].count+ '</a></td>';
+			res += '<td><a href="' + json[i].count + '">' + json[i].count+ '</a></td>'
+		     + '<td><a href="del.html?id='
+			+ json[i].id + '">Delete</td></tr>';
+		}
+	}
+	var obj = document.getElementById("datatable");
+	obj.innerHTML = res;
+}
+//-->
+</script>
+</head>
+
+<body onload="getData3(null);">
+	<h1>注文確認</h1>
+			<table id="datatable" border="1">
+				<SCRIPT LANGUAGE="JavaScript">
+				<!--
+					document.write("注文確認");
+				//-->
+				</SCRIPT>
+
+				<tr>
+					<td>wait...</td>
+				</tr>
+			</table>
+			<br>
+			
+</body>
+</html>
