@@ -82,6 +82,18 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	</servlet-mapping>
 
 
+	
+		<servlet>
+    	<servlet-name>add_shop</servlet-name>
+    	<servlet-class>pizzashop.ShopServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    	<servlet-name>add_shop</servlet-name>
+    	<url-pattern>/shop1</url-pattern>
+	</servlet-mapping>
+	
+	
+	
 	<servlet>
 		<servlet-name>del_linkdata</servlet-name>
 		<servlet-class>pizzashop.DelLinkDataServlet</servlet-class>
